@@ -20,7 +20,7 @@ public class JSONEntityString extends JSONEntity {
     
     @Override
     public String toString() {
-        String escaped = value.replace("\\", "\\\\").replace("\"", "\\\"");
+        String escaped = this.value.replace("\\", "\\\\").replace("\"", "\\\"");
         return "\"" + escaped + "\"";
     }
 
