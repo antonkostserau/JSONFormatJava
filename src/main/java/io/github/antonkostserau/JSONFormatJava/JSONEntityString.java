@@ -1,9 +1,27 @@
 package io.github.antonkostserau.JSONFormatJava;
 
 public class JSONEntityString extends JSONEntity {
+    
+    private String value;
 
-    public JSONEntityString() {
+    public JSONEntityString(String value) {
         super(JSONEntity.STRING);
+        
+        this.setValue(value);
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        String escaped = value.replace("\\", "\\\\").replace("\"", "\\\"");
+        return "\"" + escaped + "\"";
     }
 
 }
